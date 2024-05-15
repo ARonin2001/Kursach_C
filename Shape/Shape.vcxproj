@@ -143,11 +143,13 @@
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Geometry.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Tetragon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="Tetragon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "Shape.h"
 #include "Position.h"
+#include "Tetragon.h"
 #include <vector>
 
 #pragma once
@@ -12,18 +13,13 @@ public:
 	Circle(double r, Position p);
 
 public:
-	void Move(Position p) override;
-	void Compare(double areaShape) override;
-	bool Intersect(double areaShape, Position p) override;
-	bool Include() override;
-	vector<pair<double, double>> circle_to_point_array();
+	bool Intersect(Shape* shape) override;
+	bool Include(Shape* shape) override;
 
 private:
 	double radius,
 		diameter,
 		area;
 	const double PI = 3.14;
-
-	Position position;
 };
 
