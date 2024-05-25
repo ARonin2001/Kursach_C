@@ -10,16 +10,15 @@ using namespace std;
 class Circle : public Shape
 {
 public:
-	Circle(double r, Position p);
-
-public:
-	bool Intersect(Shape* shape) override;
-	bool Include(Shape* shape) override;
+	Circle(string name, double r, Position p);
+	double GetRadius() const;
+	Position GetCenterPosition() const;
 
 private:
 	double radius,
-		diameter,
-		area;
+		diameter;
+
 	const double PI = 3.14;
+	Position centerPosition;
 };
 

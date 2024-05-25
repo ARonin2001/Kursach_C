@@ -141,12 +141,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Factory.cpp" />
     <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="InputCin.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Tetragon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="InputCin.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Tetragon.h" />

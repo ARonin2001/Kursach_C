@@ -1,31 +1,30 @@
 #pragma once
 
-#include "Position.h"
-#include <vector>
-
 #ifndef SHAPE_H
 #define SHAPE_H
+
+#include "Position.h"
+#include <vector>
+#include <iostream>
 
 using namespace std;
 
 class Shape {
 public:
 	void Move(Position p);
-	void Compare(double _area);
-	virtual bool Intersect(Shape* shape) = 0;
-	virtual bool Include(Shape* shape) = 0;
-
-public:
-	bool GetArea() const;
-	void SetVertices(Position vertices[4]);  
-	vector<pair<char, Position>> GetVertices();
-
-private:
-	double area;
-	vector<pair<char, Position>> vertices;
+	int Compare(Shape* obj) const;
+	double GetArea() const;
+	vector<Position> GetVertices() const;
+	string GetName() const;
+	void ShowData() const;
 
 protected:
-	Position centerPosition;
+	void SetVertices(vector<Position>);
+	string name;
+	double area;
+
+private:
+	vector<Position> vertices;
 
 };
 

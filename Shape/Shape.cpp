@@ -4,36 +4,49 @@
 
 using namespace std;
 
-bool Shape::GetArea() const {
-	return area;
+double Shape::GetArea() const {
+	return this->area;
 }
 
-void Shape::SetVertices(Position vertices[4])
+void Shape::SetVertices(vector<Position> ver)
 {
-	vector<pair<char, Position>> ver(4);
-
-	ver[0] = make_pair('A', vertices[0]);
-	ver[1] = make_pair('B', vertices[1]);
-	ver[2] = make_pair('C', vertices[2]);
-	ver[3] = make_pair('D', vertices[3]);
-
 	this->vertices = ver;
 }
 
-vector<pair<char, Position>> Shape::GetVertices() {
+vector<Position> Shape::GetVertices() const {
 	return this->vertices;
 }
 
 void Shape::Move(Position p) {
-	centerPosition.x += p.x;
-	centerPosition.y += p.y;
+	for (auto& ver : vertices) {
+		ver.x += p.x;
+		ver.y += p.y;
+	}
 }
 
-void Shape::Compare(double _area) {
-	if (_area == area)
-		cout << "The areas of the figures are equal \n\n";
-	if (_area > area)
-		cout << "The area of the circle is smaller \n\n";
-	if (_area < area)
-		cout << "The area of the circle is larger \n\n";
+int Shape::Compare(Shape* obj) const {
+	const double objOne = GetArea();
+	const double objTwo = obj->GetArea();
+
+	if (objOne == objTwo)
+		return 0;
+	if (objOne > objTwo)
+		return 1;
+
+	return -1;
+}
+
+string Shape::GetName() const {
+	return name;
+}
+
+void Shape::ShowData() const {
+	cout << "Name: " << GetName() << endl;
+	cout << "Verticies: " << endl;
+
+	for (const auto& v : GetVertices()) {
+		cout << "X: " << v.x << " Y: " << v.y << endl;
+	}
+
+	cout << "Area: " << GetArea() << endl << endl;
 }
